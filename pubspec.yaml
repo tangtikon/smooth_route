@@ -1,6 +1,6 @@
 name: smooth_route
 description: Custom route transitions for Flutter (slide, fade, scale, instant)
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/tangtikon/smooth_route
 repository: https://github.com/tangtikon/smooth_route
 

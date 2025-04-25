@@ -5,3 +5,5 @@
 - Add global transition support via ThemeData
 ## [0.0.2] - 2025-04-25
 - improve code formatting and documentation for transitions
+## [0.0.3] - 2025-04-25
+- Bug Fixed
