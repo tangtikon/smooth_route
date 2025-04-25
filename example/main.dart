@@ -62,13 +62,18 @@ class HomePage extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed:
-                () => Navigator.push(context, RouteSide.scaleUp(const NextPage(title: 'Scale Up'))),
+                () => Navigator.push(
+                  context,
+                  RouteSide.scaleUp(const NextPage(title: 'Scale Up')),
+                ),
             child: const Text('Scale Up'),
           ),
           ElevatedButton(
             onPressed:
-                () =>
-                    Navigator.push(context, RouteSide.fadeOnly(const NextPage(title: 'Fade Only'))),
+                () => Navigator.push(
+                  context,
+                  RouteSide.fadeOnly(const NextPage(title: 'Fade Only')),
+                ),
             child: const Text('Fade Only'),
           ),
           ElevatedButton(
@@ -84,7 +89,9 @@ class HomePage extends StatelessWidget {
             onPressed:
                 () => Navigator.push(
                   context,
-                  RouteFade.slideRight(const NextPage(title: 'Fade + Slide Right')),
+                  RouteFade.slideRight(
+                    const NextPage(title: 'Fade + Slide Right'),
+                  ),
                 ),
             child: const Text('RouteFade: Slide Right + Fade'),
           ),
@@ -110,7 +117,9 @@ class NextPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
-      body: const Center(child: Text('You have arrived', style: TextStyle(fontSize: 24))),
+      body: const Center(
+        child: Text('You have arrived', style: TextStyle(fontSize: 24)),
+      ),
     );
   }
 }

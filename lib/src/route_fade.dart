@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
+/// Defines the direction for the optional slide in [RouteFade].
 enum SlideFrom { top, bottom, left, right, none }
 
+/// Provides page transitions with fade effect, and optionally slide from a direction.
 class RouteFade {
-  /// Generic fade + optional slide transition
+  /// Creates a fade transition combined with optional slide from direction [from].
   static Route<T> transition<T>(
     Widget page, {
     SlideFrom from = SlideFrom.none,
@@ -32,6 +34,7 @@ class RouteFade {
     );
   }
 
+  /// Converts [SlideFrom] enum to [Offset] used for sliding.
   static Offset _getOffset(SlideFrom from) {
     switch (from) {
       case SlideFrom.top:
@@ -47,12 +50,19 @@ class RouteFade {
     }
   }
 
-  // Shorthands
+  /// Simple fade transition with no slide.
   static Route<T> fade<T>(Widget page, {Duration duration = const Duration(milliseconds: 150)}) =>
       transition<T>(page, from: SlideFrom.none, duration: duration);
 
+  /// Slide from top + fade transition.
   static Route<T> slideTop<T>(Widget page) => transition<T>(page, from: SlideFrom.top);
+
+  /// Slide from bottom + fade transition.
   static Route<T> slideBottom<T>(Widget page) => transition<T>(page, from: SlideFrom.bottom);
+
+  /// Slide from left + fade transition.
   static Route<T> slideLeft<T>(Widget page) => transition<T>(page, from: SlideFrom.left);
+
+  /// Slide from right + fade transition.
   static Route<T> slideRight<T>(Widget page) => transition<T>(page, from: SlideFrom.right);
 }
