@@ -51,18 +51,24 @@ class RouteFade {
   }
 
   /// Simple fade transition with no slide.
-  static Route<T> fade<T>(Widget page, {Duration duration = const Duration(milliseconds: 150)}) =>
-      transition<T>(page, from: SlideFrom.none, duration: duration);
+  static Route<T> fade<T>(
+    Widget page, {
+    Duration duration = const Duration(milliseconds: 150),
+  }) => transition<T>(page, from: SlideFrom.none, duration: duration);
 
   /// Slide from top + fade transition.
-  static Route<T> slideTop<T>(Widget page) => transition<T>(page, from: SlideFrom.top);
+  static Route<T> slideTop<T>(Widget page) =>
+      transition<T>(page, from: SlideFrom.top);
 
   /// Slide from bottom + fade transition.
-  static Route<T> slideBottom<T>(Widget page) => transition<T>(page, from: SlideFrom.bottom);
+  static Route<T> slideBottom<T>(Widget page) =>
+      transition<T>(page, from: SlideFrom.bottom);
 
   /// Slide from left + fade transition.
-  static Route<T> slideLeft<T>(Widget page) => transition<T>(page, from: SlideFrom.left);
+  static Route<T> slideLeft<T>(Widget page) =>
+      transition<T>(page, from: SlideFrom.left);
 
   /// Slide from right + fade transition.
-  static Route<T> slideRight<T>(Widget page) => transition<T>(page, from: SlideFrom.right);
+  static Route<T> slideRight<T>(Widget page) =>
+      transition<T>(page, from: SlideFrom.right);
 }

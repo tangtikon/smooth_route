@@ -19,7 +19,8 @@ class RouteSide {
     final Offset begin = _getOffset(from);
 
     return PageRouteBuilder<T>(
-      transitionDuration: effect == RouteEffect.instant ? Duration.zero : duration,
+      transitionDuration:
+          effect == RouteEffect.instant ? Duration.zero : duration,
       pageBuilder: (_, __, ___) => page,
       transitionsBuilder: (_, animation, __, child) {
         final slide = SlideTransition(
@@ -57,7 +58,10 @@ class RouteSide {
             return child;
           case RouteEffect.all:
             return SlideTransition(
-              position: Tween<Offset>(begin: begin, end: Offset.zero).animate(animation),
+              position: Tween<Offset>(
+                begin: begin,
+                end: Offset.zero,
+              ).animate(animation),
               child: ScaleTransition(
                 scale: Tween<double>(begin: 1, end: 1).animate(animation),
                 child: FadeTransition(
@@ -96,23 +100,30 @@ class RouteSide {
   );
 
   /// Slide from top of screen.
-  static Route<T> slideTop<T>(Widget page) => transition<T>(page, from: SlideDirection.top);
+  static Route<T> slideTop<T>(Widget page) =>
+      transition<T>(page, from: SlideDirection.top);
 
   /// Slide from bottom of screen.
-  static Route<T> slideBottom<T>(Widget page) => transition<T>(page, from: SlideDirection.bottom);
+  static Route<T> slideBottom<T>(Widget page) =>
+      transition<T>(page, from: SlideDirection.bottom);
 
   /// Slide from left of screen.
-  static Route<T> slideLeft<T>(Widget page) => transition<T>(page, from: SlideDirection.left);
+  static Route<T> slideLeft<T>(Widget page) =>
+      transition<T>(page, from: SlideDirection.left);
 
   /// Slide from right of screen.
-  static Route<T> slideRight<T>(Widget page) => transition<T>(page, from: SlideDirection.right);
+  static Route<T> slideRight<T>(Widget page) =>
+      transition<T>(page, from: SlideDirection.right);
 
   /// Scale transition (no slide).
-  static Route<T> scaleUp<T>(Widget page) => transition<T>(page, effect: RouteEffect.scale);
+  static Route<T> scaleUp<T>(Widget page) =>
+      transition<T>(page, effect: RouteEffect.scale);
 
   /// Fade transition (no slide).
-  static Route<T> fadeOnly<T>(Widget page) => transition<T>(page, effect: RouteEffect.fade);
+  static Route<T> fadeOnly<T>(Widget page) =>
+      transition<T>(page, effect: RouteEffect.fade);
 
   /// Instant transition (no animation).
-  static Route<T> instant<T>(Widget page) => transition<T>(page, effect: RouteEffect.instant);
+  static Route<T> instant<T>(Widget page) =>
+      transition<T>(page, effect: RouteEffect.instant);
 }
